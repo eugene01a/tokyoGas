@@ -1,0 +1,331 @@
+[
+  {
+    "model": "accounts.pref",
+    "pk": 1,
+    "fields": {
+      "name": "Hokkaido"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 2,
+    "fields": {
+      "name": "Aomori"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 3,
+    "fields": {
+      "name": "Iwate"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 4,
+    "fields": {
+      "name": "Miyagi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 5,
+    "fields": {
+      "name": "Akita"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 6,
+    "fields": {
+      "name": "Yamagata"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 7,
+    "fields": {
+      "name": "Fukushima"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 8,
+    "fields": {
+      "name": "Ibaraki"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 9,
+    "fields": {
+      "name": "Tochigi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 10,
+    "fields": {
+      "name": "Gunma"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 11,
+    "fields": {
+      "name": "Saitama"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 12,
+    "fields": {
+      "name": "Chiba"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 13,
+    "fields": {
+      "name": "Tokyo"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 14,
+    "fields": {
+      "name": "Kanagawa"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 15,
+    "fields": {
+      "name": "Niigata"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 16,
+    "fields": {
+      "name": "Toyama"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 17,
+    "fields": {
+      "name": "Ishikawa"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 18,
+    "fields": {
+      "name": "Fukui"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 19,
+    "fields": {
+      "name": "Yamanashi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 20,
+    "fields": {
+      "name": "Nagano"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 21,
+    "fields": {
+      "name": "Gifu"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 22,
+    "fields": {
+      "name": "Shizuoka"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 23,
+    "fields": {
+      "name": "Aichi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 24,
+    "fields": {
+      "name": "Mie"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 25,
+    "fields": {
+      "name": "Shiga"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 26,
+    "fields": {
+      "name": "Kyoto"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 27,
+    "fields": {
+      "name": "Osaka"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 28,
+    "fields": {
+      "name": "Hyogo"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 29,
+    "fields": {
+      "name": "Nara"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 30,
+    "fields": {
+      "name": "Wakayama"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 31,
+    "fields": {
+      "name": "Tottori"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 32,
+    "fields": {
+      "name": "Shimane"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 33,
+    "fields": {
+      "name": "Okayama"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 34,
+    "fields": {
+      "name": "Hiroshima"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 35,
+    "fields": {
+      "name": "Yamaguchi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 36,
+    "fields": {
+      "name": "Tokushima"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 37,
+    "fields": {
+      "name": "Kagawa"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 38,
+    "fields": {
+      "name": "Ehime"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 39,
+    "fields": {
+      "name": "Kochi"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 40,
+    "fields": {
+      "name": "Fukuoka"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 41,
+    "fields": {
+      "name": "Saga"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 42,
+    "fields": {
+      "name": "Nagasaki"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 43,
+    "fields": {
+      "name": "Kumamoto"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 44,
+    "fields": {
+      "name": "Oita"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 45,
+    "fields": {
+      "name": "Miyazaki"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 46,
+    "fields": {
+      "name": "Kagoshima"
+    }
+  },
+  {
+    "model": "accounts.pref",
+    "pk": 47,
+    "fields": {
+      "name": "Okinawa"
+    }
+  }
+]
