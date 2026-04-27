@@ -1,3 +1,7 @@
+
+# Django settings file for the tokyoGas project.
+# This file configures all core aspects of the Django application, including installed apps, middleware, database, templates, static files, authentication, and environment-specific options.
+# It is used by manage.py and all entry points (ASGI/WSGI) to control how the app runs in development and production.
 import os
 from pathlib import Path
 

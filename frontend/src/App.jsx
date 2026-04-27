@@ -1,5 +1,19 @@
+// App.jsx
+// Main React component for the user registration form in the tokyoGas project.
+// This file implements a complete registration workflow, including form state, validation, API calls, and user feedback.
+//
+// Key features:
+// - Fetches prefecture options from the backend API for the dropdown.
+// - Provides real-time client-side validation matching backend rules.
+// - Submits registration data to the backend via POST to /api/register/.
+// - Displays success or error messages based on server response.
+// - Uses React hooks (useState, useEffect) for state and side effects.
+//
+// This file is intended for engineers who may not be familiar with React. Inline comments are provided throughout to explain each section.
+
 import React, { useEffect, useState } from 'react';
 
+// Initial state for the registration form fields.
 const initialState = {
   username: '',
   email: '',
@@ -8,7 +22,8 @@ const initialState = {
   pref: '',
 };
 
-// Client-side validation matching backend rules for immediate feedback.
+// Client-side validation function.
+// Checks all fields and returns an object with error messages for invalid fields.
 const validate = (values) => {
   const errors = {};
   if (!values.username || values.username.trim().length < 3) {
@@ -39,15 +54,18 @@ const validate = (values) => {
   return errors;
 };
 
+// Default options for the prefecture dropdown.
 const DEFAULT_PREF_OPTIONS = [{ value: '', label: 'Select a prefecture' }];
 
 export default function App() {
+  // React state hooks for form values, errors, server messages, submission state, and prefecture options.
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [serverMessage, setServerMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [prefOptions, setPrefOptions] = useState(DEFAULT_PREF_OPTIONS);
 
+  // useEffect runs once on component mount to fetch prefecture options from the backend API.
   useEffect(() => {
     fetch('/api/prefs/')
       .then((response) => response.json())
@@ -58,6 +76,7 @@ export default function App() {
         ]);
       })
       .catch(() => {
+        // Fallback options if API call fails.
         setPrefOptions([
           { value: '', label: 'Select a prefecture' },
           { value: '1', label: 'Tokyo' },
@@ -67,6 +86,8 @@ export default function App() {
       });
   }, []);
 
+  // Handles changes to any form field.
+  // Updates state and triggers validation.
   const handleChange = (event) => {
     const { name, value } = event.target;
     const nextValues = { ...values, [name]: value };
@@ -74,6 +95,8 @@ export default function App() {
     setErrors(validate(nextValues));
   };
 
+  // Handles form submission.
+  // Validates fields, sends data to backend, and updates UI based on response.
   const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = validate(values);
@@ -105,6 +128,7 @@ export default function App() {
     }
   };
 
+  // If registration is successful, show a confirmation message and reset option.
   if (submitted) {
     return (
       <main className="container">
@@ -115,30 +139,36 @@ export default function App() {
     );
   }
 
+  // Main registration form UI.
   return (
     <main className="container">
       <h1>React User Registration</h1>
       <form onSubmit={handleSubmit} noValidate>
+        {/* Username field */}
         <div className="field">
           <label htmlFor="username">Username</label>
           <input name="username" id="username" value={values.username} onChange={handleChange} />
           {errors.username && <div className="error">{errors.username}</div>}
         </div>
+        {/* Email field */}
         <div className="field">
           <label htmlFor="email">Email</label>
           <input name="email" id="email" value={values.email} onChange={handleChange} />
           {errors.email && <div className="error">{errors.email}</div>}
         </div>
+        {/* Password field */}
         <div className="field">
           <label htmlFor="password">Password</label>
           <input type="password" name="password" id="password" value={values.password} onChange={handleChange} />
           {errors.password && <div className="error">{errors.password}</div>}
         </div>
+        {/* Telephone field */}
         <div className="field">
           <label htmlFor="tel">Telephone</label>
           <input name="tel" id="tel" value={values.tel} onChange={handleChange} />
           {errors.tel && <div className="error">{errors.tel}</div>}
         </div>
+        {/* Prefecture dropdown */}
         <div className="field">
           <label htmlFor="pref">Prefecture</label>
           <select name="pref" id="pref" value={values.pref} onChange={handleChange}>
@@ -152,6 +182,7 @@ export default function App() {
         </div>
         <button type="submit">Register</button>
       </form>
+      {/* Server-side message (success or error) */}
       {serverMessage && <p className="server-message">{serverMessage}</p>}
     </main>
   );

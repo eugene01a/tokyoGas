@@ -17,6 +17,7 @@ def register_view(request):
 
 
 def registration_complete_view(request):
+    # View for the registration completion page, shown after successful user registration.
     return render(request, 'accounts/registration_complete.html')
 
 
