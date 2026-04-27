@@ -4,40 +4,47 @@ from rest_framework.test import APIClient
 from .models import Pref, CustomUser
 
 
-# Coverage for server-rendered form registration flows.
-class RegistrationFormTests(TestCase):
-    # Test class for Django form-based user registration, covering validation and creation.
-
+# API-based registration tests for React frontend integration.
+class RegistrationAPITests(TestCase):
     def setUp(self):
-        # Sets up test data: creates a prefecture and gets the registration URL.
         self.pref = Pref.objects.create(name='Tokyo')
-        self.register_url = reverse('accounts:register')
+        self.api_url = reverse('accounts:api_register')
+        self.client = APIClient()
 
-    def test_register_form_valid_data_creates_user(self):
-        # Tests successful user creation with valid form data.
-        response = self.client.post(self.register_url, {
+    def test_api_register_valid_data_creates_user(self):
+        response = self.client.post(self.api_url, {
             'username': 'testuser',
             'email': 'test@example.com',
             'password': 'StrongPass1',
             'tel': '09012345678',
             'pref': self.pref.pk,
-        })
-        self.assertEqual(response.status_code, 302)
+        }, format='json')
+        self.assertEqual(response.status_code, 201)
         self.assertTrue(CustomUser.objects.filter(email='test@example.com').exists())
 
-    def test_register_form_rejects_short_username(self):
-        # Tests rejection of usernames shorter than 3 characters.
-        response = self.client.post(self.register_url, {
+    def test_api_register_rejects_short_username(self):
+        response = self.client.post(self.api_url, {
             'username': 'ab',
             'email': 'test2@example.com',
             'password': 'StrongPass1',
             'tel': '09012345678',
             'pref': self.pref.pk,
-        })
-        self.assertContains(response, 'Username must be at least 3 characters long.')
+        }, format='json')
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('username', response.data)
         self.assertFalse(CustomUser.objects.filter(email='test2@example.com').exists())
 
-    def test_register_form_rejects_invalid_email(self):
+    def test_api_register_rejects_invalid_email(self):
+        response = self.client.post(self.api_url, {
+            'username': 'testuser2',
+            'email': 'invalid-email',
+            'password': 'StrongPass1',
+            'tel': '09012345678',
+            'pref': self.pref.pk,
+        }, format='json')
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('email', response.data)
+        self.assertFalse(CustomUser.objects.filter(username='testuser2').exists())
         # Tests rejection of invalid email formats.
         response = self.client.post(self.register_url, {
             'username': 'validuser',
