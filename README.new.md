@@ -1,8 +1,15 @@
 # Tokyo Gas Registration Project
 
- `/register/` - React frontend registration (main entry point)
-- `templates/accounts/` - server-rendered templates for registration and completion pages
+This repository contains a Django demonstration project for Tokyo Gas registration requirements.
+
+## Structure
+- `config/` - Django project settings and configuration
+- `accounts/` - Django app containing the custom user model, API, and tests
+- `templates/accounts/` - server-rendered templates for registration completion
 - `frontend/` - React frontend app sources for realtime validation and API integration
+- `static/` - Django static files directory (contains built React assets)
+- `requirements.txt` - Python dependencies
+
 ## Features
 - Custom user model inheriting from `AbstractUser`
 - `tel` and `pref` fields added to user
@@ -11,12 +18,8 @@
 - React frontend for realtime client-side validation and API submission
 - Database fixtures for all 47 Japanese prefectures
 - Email uniqueness enforced at both application and database levels
-- REST API registration endpoint using Django REST Framework
-- React frontend for realtime client-side validation and API submission
-## Notes
-- Python 3.10+ is recommended but 3.9.6 works for this demo
-- React app is built and served as Django static files
-- All prefecture data is pre-loaded via fixtures
+
+## Setup
 1. Install Python dependencies
    ```bash
    pip install -r requirements.txt
